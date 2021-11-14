@@ -17,9 +17,9 @@ func _ready() -> void:
 
 func window_resize(event: InputEvent) -> void:
 	if Input.is_action_just_released("click"):
-		textedit.rect_size = get_global_mouse_position() - textedit.rect_position
+		textedit.rect_size = get_local_mouse_position() - textedit.rect_position
 	if Input.is_action_pressed("click"):
-		textedit.rect_size = get_global_mouse_position() - textedit.rect_position
+		textedit.rect_size = get_local_mouse_position() - textedit.rect_position
 		
 		resize_area.rect_position = textedit.rect_size + textedit.rect_position - resize_area.rect_min_size / 2
 		
